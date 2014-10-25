@@ -14,9 +14,9 @@ set :domain, 'ds1.gakky.net'
 set :deploy_to, '/var/www/mina'
 set :repository, 'git@github.com:luckylu/mina.git'
 set :branch, 'master'
-
+set :rails_env, 'production'
 # For system-wide RVM install.
-#   set :rvm_path, '/usr/local/rvm/bin/rvm'
+  set :rvm_path, '/usr/local/rvm/bin/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
@@ -35,7 +35,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use[ruby-1.9.3-p125@default]'
+   invoke :'rvm:use[ruby-2.1.2-p95@default]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
